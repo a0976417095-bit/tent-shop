@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>訂單完成｜感謝您的購買</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f6f6f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Arial, sans-serif;
+    }
+    .wrap {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+    .icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 10px 0 20px;
+      color: #ff6a00;
+    }
+    .info {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 32px;
+      background: #ff6a00;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .btn:hover {
+      opacity: .9;
+    }
+    .small {
+      color: #888;
+      font-size: .9rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="icon">✅</div>
+    <h1>訂單已完成</h1>
+    <p>感謝您的購買，我們已收到您的訂單。</p>
+
+    <div class="info">
+      訂單編號：<span id="orderId">—</span><br>
+      訂單金額：<span id="amount">NT$1,699</span>
+    </div>
+
+    <a href="index.html" class="btn">回到首頁</a>
+
+    <p class="small">
+      商品將於 1–3 個工作天內出貨<br>
+      若有問題請聯絡客服
+    </p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('orderId').textContent =
+      params.get('orderid') || 'ECPAY-TEST';
+    document.getElementById('amount').textContent =
+      params.get('amount') || 'NT$1,699';
+  </script>
+
+</body>
+</html>
